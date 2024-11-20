@@ -1,42 +1,86 @@
-#root {
-  max-width: 1280px;
+.form {
+  width: 300px;
+  margin: 64px auto 16px;
+}
+
+.form > div {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.form input[type="text"],
+.form input[type="date"],
+.form select {
+  display: block;
+  padding: 0;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  flex-grow: 1;
+}
+
+.form input[type="button"] {
+  width: 80px;
+  border: 1px solid #ddd;
+}
+
+.filter {
+  width: 300px;
+  margin: 16px auto;
+}
+
+ul {
+  width: 300px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 0;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+li {
+  display: flex;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.3);
+  margin: 0 0 8px;
+  padding: 8px 0;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+li.expired {
+  background: #fcc;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+li label {
+  flex: 1;
+  display: block;
+  line-height: 32px;
+  min-height: 32px;
 }
 
-.card {
-  padding: 2em;
+li label p {
+  margin: 0 20px 4px;
+  font-size: 0.8em;
+  line-height: 1em;
 }
 
-.read-the-docs {
-  color: #888;
+li label span {
+  font-size: 0.8em;
+  vertical-align: top;
+  color: #999;
+  margin-right: 8px;
+}
+
+li:has(input:checked) {
+  background: #ffd;
+}
+
+li button {
+  appearance: none;
+  border: none;
+  border-radius: 16px;
+  width: 32px;
+  height: 32px;
+  background: rgb(0 0 0 / 0.1);
+  margin-right: 8px;
+  margin-left: auto;
+}
+
+li button:hover {
+  background: rgba(0 0 0 / 0.4);
 }
