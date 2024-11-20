@@ -1,50 +1,46 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import {
+  getFirestoreTasks,
+  addFirestoreTask,
+  setFirestoreTaskDone,
+  removeFirestoreTask,
+} from "./repository";
 
-export type Task = {
+export type DraftTask = {
   title: string;
   done: boolean;
   category: string;
   deadline?: string;
 };
 
+export type Task = DraftTask & {
+  id: string;
+};
+
 export const useHandleTasks = () => {
-  const [tasks, setTasks] = useState<Task[]>([
-    {
-      title: "買い物",
-      done: true,
-      category: "生活",
-    },
-    {
-      title: "メール返信",
-      done: false,
-      category: "仕事",
-    },
-    {
-      title: "レポート提出",
-      done: false,
-      category: "仕事",
-    },
-  ]);
+  const [tasks, setTasks] = useState<Task[]>([]);
 
-  const addTask = (task: Task) => {
-    setTasks([...tasks, task]);
+  const update = async () => {
+    setTasks(await getFirestoreTasks());
   };
 
-  const removeTask = (task: Task) => {
-    setTasks(tasks.filter((_) => _ !== task));
+  useEffect(() => {
+    update();
+  }, []);
+
+  const addTask = async (task: DraftTask) => {
+    await addFirestoreTask(task);
+    await update();
   };
 
-  const setTaskDone = (task: Task, done: boolean) => {
-    setTasks(
-      tasks.map((_) =>
-        _ !== task
-          ? _
-          : {
-              ...task,
-              done,
-            }
-      )
-    );
+  const removeTask = async (task: Task) => {
+    await removeFirestoreTask(task);
+    await update();
+  };
+
+  const setTaskDone = async (task: Task, done: boolean) => {
+    await setFirestoreTaskDone(task, done);
+    await update();
   };
 
   return {
