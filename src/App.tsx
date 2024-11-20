@@ -11,6 +11,7 @@ const App: React.FC = () => {
   const [deadline, setDeadline] = useState(
     new Date().toISOString().slice(0, 10)
   );
+  const [disabled, setDisabled] = useState(false);
 
   return (
     <>
@@ -52,13 +53,16 @@ const App: React.FC = () => {
           <input
             type="button"
             value="追加"
-            onClick={() => {
-              addTask({
+            disabled={disabled}
+            onClick={async (e) => {
+              setDisabled(true);
+              await addTask({
                 title,
                 category,
                 done: false,
                 ...(isDeadline && { deadline }),
               });
+              setDisabled(false);
               setTitle("");
             }}
           />
