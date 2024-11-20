@@ -3,6 +3,7 @@ import { useState } from "react";
 export type Task = {
   title: string;
   done: boolean;
+  deadline?: string;
 };
 
 export const useHandleTasks = () => {
