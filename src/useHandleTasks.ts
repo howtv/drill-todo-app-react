@@ -3,6 +3,7 @@ import { useState } from "react";
 export type Task = {
   title: string;
   done: boolean;
+  category: string;
   deadline?: string;
 };
 
@@ -11,14 +12,17 @@ export const useHandleTasks = () => {
     {
       title: "買い物",
       done: true,
+      category: "生活",
     },
     {
       title: "メール返信",
       done: false,
+      category: "仕事",
     },
     {
       title: "レポート提出",
       done: false,
+      category: "仕事",
     },
   ]);
 
