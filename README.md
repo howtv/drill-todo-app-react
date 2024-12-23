@@ -1,6 +1,8 @@
 # drill-todo-app-react
 [ToDoアプリの作成 - Software Engineer 就活 by 外資就活ドットコム](https://gaishishukatsu.com/engineer/drill/1/1)
 
+[サンプル](https://howtv.github.io/drill-todo-app-react/)
+
 このプロジェクトでは、シンプルなToDoアプリの作成を通して、Reactを用いたフロントエンド開発の基礎を学習します。最小限の機能を実装したサンプルコードを用意しているので、自分でプロジェクトを作成したことがない人でも簡単に開発に取り組むことができます。
 
 ステップ2, 3では、タスクの期限順にソートしたり、特定のカテゴリのタスクのみを表示したりする追加機能を作成します。
@@ -20,6 +22,7 @@
 |[タスクのカテゴリを設定する](https://gaishishukatsu.com/engineer/drill/1/3)|[https://github.com/howtv/drill-todo-app-react/tree/step3](https://github.com/howtv/drill-todo-app-react/tree/step3)|
 |[タスクの内容を保持できるようにする [LocalStorage]](https://gaishishukatsu.com/engineer/drill/1/4)|[https://github.com/howtv/drill-todo-app-react/tree/step4-1](https://github.com/howtv/drill-todo-app-react/tree/step4-1)|
 |[タスクの内容を保持できるようにする [Firebase]](https://gaishishukatsu.com/engineer/drill/1/4)|[https://github.com/howtv/drill-todo-app-react/tree/step4-2](https://github.com/howtv/drill-todo-app-react/tree/step4-2)|
+|[GitHub Pagesにデプロイ](https://gaishishukatsu.com/engineer/drill/1/5)|[https://github.com/howtv/drill-todo-app-react/tree/step5](https://github.com/howtv/drill-todo-app-react/tree/step5)|
 ---
 
 # React + TypeScript + Vite
